@@ -2,7 +2,9 @@
 # Junio 2022
 
 import itertools as it
+
 from funciones import *
+from prints import *
 
 m = inicio()
 
@@ -13,45 +15,50 @@ if m == 1:
         ele = elementos(n)
         r = repeticion1(n)
         res = factorial(n)/factorial((n-r))
-        print("La cantidad de variaciones que hay sin repeticiones es: " + str(res))
+        print("La cantidad de variaciones sin repeticiones que hay son: " + str(res))
         l = lista()
-        
         if l == "SI": 
-            res = list(it.permutations(ele, r))
-            print(res)
+            variaciones(v,ele,r)
     else:
         n = numero()
         ele = elementos(n)
-        r = repeticion2()
+        r = repeticion2(n)
         res = n**r
-        print("La cantidad de variaciones que hay con repeticiones es: " + str(res))
+        print("La cantidad de variaciones con repeticiones que hay son: " + str(res))
         l = lista()
-        print(ele)
         if l == "SI":
-            res = list(it.product(ele, repeat=r))
-            print(res)
+            variaciones(v,ele,r)
 
 elif m == 2:
     p = opcion2()
     if p == 1:
         n = numero()
         ele = elementos(n)
-        print(factorial(n))
+        print("La cantidad de permutaciones lineales que hay son: " + str(factorial(n)))
         l = lista()
         if l == "SI":
-            res = list(it.permutations(ele))
-            print(res)
+            permutaciones(p,ele,n)
     elif p == 2:
-        None
-    
+        n = numero()
+        res = permutaciones(p,None,n)
+        print("La cantidad de permutaciones circulares que hay son:\n" + str(len(list(res))))
+        l = lista()
+        if l == "SI":
+            print("El listado de las permutaciones circulares son:\n" + str(res))    
     elif p == 3:
         n = numero()
         ele = elementos(n)
-        print(n**n)
+        print("La cantidad de permutaciones con repeticiones que hay son: " + str(n**n))
         l = lista()
         if l == "SI":
-            res = list(it.product(ele, repeat=n))
-            print(res)
+            permutaciones(p,ele,n)
+    else:
+        n = numero()
+        ele = elements(n)
+        print(len(list(multiset_permutations(ele))))
+        l = lista()
+        if l == "SI":
+            permutaciones(p,ele,n)
         
 else:
     c = opcion3()
@@ -60,17 +67,16 @@ else:
         ele = elementos(n)
         r = repeticion1(n)
         res = int(factorial(n)/(factorial(n-r)*factorial(r)))
-        print("La cantidad de combinaciones que hay sin repeticiones es: " + str(res))
+        print("La cantidad de combinaciones sin repeticiones que hay son: " + str(res))
         l = lista()        
         if l == "SI": 
-            res = list(it.combinations(ele, r))
-            print(res)
+            combinaciones(c,ele,r)
     else:
         n = numero()
         ele = elementos(n)
-        r = repeticion2()
+        r = combinacionR()
         res = list((it.combinations_with_replacement(ele, r)))
-        print("La cantidad de combinaciones que hay con repeticiones es: " + str(len(res)))
+        print("La cantidad de combinaciones con repeticiones que hay son: " + str(len(res)))
         l = lista()
         if l == "SI":
-            print(res)
+            combinaciones(c,ele,r)

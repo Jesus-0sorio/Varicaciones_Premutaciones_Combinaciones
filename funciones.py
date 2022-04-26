@@ -24,26 +24,39 @@ def repeticion1(n):
             print("Digite un numero entero")
             continue
 
-        if n < i:
-            print("Digite un numero menor o igual a la cantidad de datos que hay")
+        if n < i and i == 0:
+            print("Digite un numero menor al numero de elementos que hay y mayor a 0")
             continue
         else:
             break
     return i
 
-def repeticion2():
+def repeticion2(n):
     while True:
         try:
             i = int(input("Ingrese el numero de elementos que quiere tomar a la vez: "))
         except ValueError:
             print("Digite un numero entero")
             continue
-        if i > 0:
+        if i > 0 and i != n:
             break            
         else:
-            print("Ingrese un numero entero mayor a 0 ")
+            print("Ingrese un numero entero mayor a 0 y diferente a la cantidad de elementos ingresados ")
+            continue            
+    return i
+
+def combinacionR():
+    while True:
+        try:
+            i = int(input("Ingrese el numero de elementos que quiere tomar a la vez: "))
+        except ValueError:
+            print("Digite un numero entero")
             continue
-            
+        if i == 0 and i < 0:
+            print("Ingrese un numero entero mayor a 0")
+            continue
+        else:
+            break
     return i
 
 def inicio():
@@ -187,7 +200,7 @@ Elige una opción: """
 variacion =  """
 Que tipo de variacion desea realizar
 
-1 - Variacion sin repeticion
+1 - Variacion ordinarias
 2 - Variacion con repeticion
 
 Elige una opcion: """
