@@ -16,13 +16,9 @@ if m == 1:
         print("La cantidad de variaciones que hay sin repeticiones es: " + str(res))
         l = lista()
         
-        if l == "SI":
-            total = [] 
-            res = it.permutations(ele, r)
-            for i in res:
-                D= "".join(i)
-                total.append(D) 
-            print(total)
+        if l == "SI": 
+            res = list(it.permutations(ele, r))
+            print(res)
     else:
         n = numero()
         ele = elementos(n)
@@ -32,12 +28,8 @@ if m == 1:
         l = lista()
         print(ele)
         if l == "SI":
-            total = []
-            res = it.product(ele, repeat=r)
-            for i in res:
-                D = "".join(i)
-                total.append(D) 
-            print(total)
+            res = list(it.product(ele, repeat=r))
+            print(res)
 
 elif m == 2:
     p = opcion2()
@@ -47,12 +39,8 @@ elif m == 2:
         print(factorial(n))
         l = lista()
         if l == "SI":
-            res = it.permutations(ele)
-            total=[]
-            for i in res:
-                D= "".join(i)
-                total.append(D) 
-            print(total)
+            res = list(it.permutations(ele))
+            print(res)
     elif p == 2:
         None
     
@@ -62,12 +50,8 @@ elif m == 2:
         print(n**n)
         l = lista()
         if l == "SI":
-            res = it.product(ele, repeat=n)
-            total = []
-            for i in res:
-                D = "".join(i)
-                total.append(D)
-            print(total)
+            res = list(it.product(ele, repeat=n))
+            print(res)
         
 else:
     c = opcion3()
@@ -78,24 +62,15 @@ else:
         res = int(factorial(n)/(factorial(n-r)*factorial(r)))
         print("La cantidad de combinaciones que hay sin repeticiones es: " + str(res))
         l = lista()        
-        if l == "SI":
-            total = [] 
-            res = it.combinations(ele, r)
-            for i in res:
-                D= "".join(i)
-                total.append(D) 
-            print(total)
+        if l == "SI": 
+            res = list(it.combinations(ele, r))
+            print(res)
     else:
         n = numero()
         ele = elementos(n)
         r = repeticion2()
-        res = len(list((it.combinations_with_replacement(ele, r))))
-        print("La cantidad de combinaciones que hay con repeticiones es: " + str(res))
+        res = list((it.combinations_with_replacement(ele, r)))
+        print("La cantidad de combinaciones que hay con repeticiones es: " + str(len(res)))
         l = lista()
         if l == "SI":
-            total = []
-            res = it.combinations_with_replacement(ele, r)
-            for i in res:
-                D = "".join(i)
-                total.append(D)
-            print(total)
+            print(res)

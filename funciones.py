@@ -122,7 +122,7 @@ def lista():
             continue
     return n
 
-def elementos(n):
+def elements(n):
     while True:
         try:
             i = input("Ingrese los elementos: ")
@@ -135,6 +135,31 @@ def elementos(n):
         else:
             break
     return i
+def elementos(n):   
+    while True:
+        try:
+            o = int(input("""Desea escribir palabras o caracteres individuales unidos
+            1 - Palabras
+            2 - Caracteres
+            Eliga una opcion: """))
+        except ValueError:
+            print("\nIngrese una de las dos opciones")
+            continue
+        if o == 1:
+            ele = []
+            a = 1
+            for h in range(n):           
+                p = input("Ingrese la " + str(a)+ " palabra: ")
+                a += 1
+                ele.append(p)
+            break
+        elif o == 2:
+            ele = elements(n)    
+            break
+        else:
+            print("\nIngrese una de las dos opciones")
+            continue
+    return ele
 
 def factorial(num): 
     if num < 0: 
