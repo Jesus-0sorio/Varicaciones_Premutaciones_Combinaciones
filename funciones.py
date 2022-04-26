@@ -1,5 +1,5 @@
 # Autor: Jesus.0sorio
-# Junio 2022
+# Abril 2022
 
 def numero():
     while True:
