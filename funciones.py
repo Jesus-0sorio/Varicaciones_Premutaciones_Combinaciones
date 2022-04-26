@@ -138,12 +138,12 @@ def lista():
 def elements(n):
     while True:
         try:
-            i = input("Ingrese los elementos: ")
+            i = input("Ingrese la palabra o cifras(unidas sin comas): ")
         except ValueError:
             continue
 
         if n < len(i) or n > len(i):
-            print("Ingrese el mismo numero de elementos que al que se le va hacer el calculo")
+            print("Ingrese una palabra que tenga el mismo tamaño de n")
             continue
         else:
             break
@@ -151,27 +151,16 @@ def elements(n):
 def elementos(n):   
     while True:
         try:
-            o = int(input("""Desea escribir palabras o caracteres individuales unidos
-            1 - Palabras
-            2 - Caracteres
-            Eliga una opcion: """))
-        except ValueError:
-            print("\nIngrese una de las dos opciones")
-            continue
-        if o == 1:
             ele = []
             a = 1
             for h in range(n):           
-                p = input("Ingrese la " + str(a)+ " palabra: ")
+                p = input("Ingrese el elemento " + str(a) +": ")
                 a += 1
                 ele.append(p)
-            break
-        elif o == 2:
-            ele = elements(n)    
-            break
-        else:
-            print("\nIngrese una de las dos opciones")
+        except ValueError:
             continue
+        else:
+            break
     return ele
 
 def factorial(num): 

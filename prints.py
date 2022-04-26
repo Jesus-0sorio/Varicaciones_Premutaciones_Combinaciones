@@ -46,5 +46,5 @@ def combinaciones(c,ele,r):
         res = list(it.combinations(ele, r))
         print("El listado de las combinaciones sin repeticiones son:\n" + str(res))
     else:
-        res = res = list(it.combinations(ele, r))
-        print("El listado de las combinaciones con repeticion son:\n" + str(len(res)))
+        res = res = list(it.combinations_with_replacement(ele, r))
+        print("El listado de las combinaciones con repeticion son:\n" + str(res))
