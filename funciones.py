@@ -67,8 +67,8 @@ def inicio():
             print("Digite una de las opciones")
             continue
 
-        if n <= 0 or n > 3:
-            print("Digite una de las 3 opciones")
+        if n <= 0 or n > 4:
+            print("Digite una de las 4 opciones")
             continue
         else:
             break
@@ -183,6 +183,7 @@ Que operacion desea realizar
 1 - Variacion
 2 - Permutacion
 3 - Combinacion
+4 - Finalizar programa
 
 Elige una opción: """
 
